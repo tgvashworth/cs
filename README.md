@@ -1,6 +1,6 @@
 # cs
 
-Building algorithms as a learning exercise in Javascript.
+Building algorithms in Javascript as a learning exercise.
 
 ### Search
 
