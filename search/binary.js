@@ -4,8 +4,11 @@ var assert = require('assert');
  * Find a value in a sorted array.
  *
  * Takes a sorted array and a value to look for, and returns the index or null.
- * It recurses into itself with every-smaller halves of the original array until
- * it has an empty array or the value it needs.
+ * It recurses into itself, processing every-smaller segments of the original
+ * array until it has nothing left, or finds the value it needs.
+ *
+ * General case: O(log n), where n is len(arr)
+ * Worst case: O(n), where n is len(arr)
  */
 var search = function search(arr, val, min, max) {
   if (!min) { min = 0; }
