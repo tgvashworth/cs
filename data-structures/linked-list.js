@@ -23,6 +23,15 @@ var linkedList = (function () {
   };
 
   /**
+   * Pop the last node off the end
+   */
+  linkedList.pop = function () {
+    if (!this.tail) { return null; }
+    var len = this.length();
+    return this.rm(len - 1);
+  };
+
+  /**
    * Grab the first value from the list
    */
   linkedList.first = function (val) {
@@ -76,7 +85,7 @@ var linkedList = (function () {
    * Get the list's length
    */
   linkedList.length = function () {
-    if (!this.head) { return; }
+    if (!this.head) { return 0; }
     var visited = 0,
         current = this.head;
     while (current.next) {
@@ -106,12 +115,13 @@ var linkedList = (function () {
 
 
 var ll = Object.create(linkedList);
+
 ll.push(1);
 ll.push(2);
 ll.push(3);
 ll.push(0);
 ll.push(5);
-ll.traverse();
+
 assert.deepEqual(ll.at(0), 1);
 assert.deepEqual(ll.at(1), 2);
 assert.deepEqual(ll.at(2), 3);
@@ -119,14 +129,26 @@ assert.deepEqual(ll.first(), 1);
 assert.deepEqual(ll.last(), 5);
 assert.deepEqual(ll.length(), 5);
 
-console.log('==  ========================');
 ll.rm(0);
 assert.deepEqual(ll.at(0), 2);
-ll.traverse();
 assert.deepEqual(ll.length(), 4);
 
-console.log('==  ========================');
 ll.rm(3);
 assert.deepEqual(ll.last(), 0);
-ll.traverse();
 assert.deepEqual(ll.length(), 3);
+
+ll.pop();
+assert.deepEqual(ll.last(), 3);
+assert.deepEqual(ll.length(), 2);
+
+ll.pop();
+assert.deepEqual(ll.last(), 2);
+assert.deepEqual(ll.length(), 1);
+
+ll.pop();
+assert.deepEqual(ll.last(), null);
+assert.deepEqual(ll.length(), 0);
+
+ll.push(1);
+assert.deepEqual(ll.last(), 1);
+assert.deepEqual(ll.length(), 1);
