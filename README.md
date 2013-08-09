@@ -8,7 +8,7 @@ Building algorithms in Javascript as a learning exercise.
 
 ### Random
 
-- [Array Intersection (O(m + n))](/array-intersection/sorted.js)
+- [Sorted Array Intersection](/array-intersection/sorted.js)
 
 ### Todo
 
