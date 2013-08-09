@@ -3,16 +3,16 @@ var assert = require('assert');
 /**
  * Linked-list.
  *
- * Supports push, at, last and first.
+ * Supports push, at, rm, last, first and length, plus traverse for logging.
  *
- * TODO add rm, pop.
+ * TODO add pop
  */
 var linkedList = (function () {
   var linkedList = {},
       node = {};
 
   /**
-   * Push an object to the front of the list
+   * Push a node to the front of the list
    */
   linkedList.push = function (val) {
     var newNode = Object.create(node);
@@ -54,6 +54,39 @@ var linkedList = (function () {
   };
 
   /**
+   * Remove a node from the list at index
+   */
+  linkedList.rm = function (index) {
+    if (!this.head) { return null; }
+    var visited = 0,
+        current = this.head,
+        last = null;
+    while (current && visited < index) {
+      last = current;
+      current = current.next;
+      visited++;
+    }
+    if (last) { last.next = current.next; }
+    if (this.head === current) { this.head = current.next; }
+    if (this.tail === current) { this.tail = last; }
+    return current.value;
+  };
+
+  /**
+   * Get the list's length
+   */
+  linkedList.length = function () {
+    if (!this.head) { return; }
+    var visited = 0,
+        current = this.head;
+    while (current.next) {
+      current = current.next;
+      visited++;
+    }
+    return visited + 1;
+  };
+
+  /**
    * Log out the list
    * TODO get rid of the duplication here
    */
@@ -84,3 +117,16 @@ assert.deepEqual(ll.at(1), 2);
 assert.deepEqual(ll.at(2), 3);
 assert.deepEqual(ll.first(), 1);
 assert.deepEqual(ll.last(), 5);
+assert.deepEqual(ll.length(), 5);
+
+console.log('==  ========================');
+ll.rm(0);
+assert.deepEqual(ll.at(0), 2);
+ll.traverse();
+assert.deepEqual(ll.length(), 4);
+
+console.log('==  ========================');
+ll.rm(3);
+assert.deepEqual(ll.last(), 0);
+ll.traverse();
+assert.deepEqual(ll.length(), 3);
