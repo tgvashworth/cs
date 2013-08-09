@@ -16,7 +16,6 @@ Building algorithms in Javascript as a learning exercise.
 
 ### Todo
 
-- Linked-List
 - Doubly Linked-List
 - LRU Cache
 - Deferred
