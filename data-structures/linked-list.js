@@ -3,9 +3,7 @@ var assert = require('assert');
 /**
  * Linked-list.
  *
- * Supports push, at, rm, last, first and length, plus traverse for logging.
- *
- * TODO add pop
+ * Supports push, pop, at, rm, last, first and length, plus traverse for logging.
  */
 var linkedList = (function () {
   var linkedList = {},
