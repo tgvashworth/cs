@@ -2,6 +2,10 @@
 
 Building algorithms in Javascript as a learning exercise.
 
+### Data Structures
+
+- [Linked List](/data-structures/linked-list.js)
+
 ### Search
 
 - [Binary Search (numbers)](/search/binary.js)

@@ -4,6 +4,8 @@ var assert = require('assert');
  * Linked-list.
  *
  * Supports push, at, last and first.
+ *
+ * TODO add rm, pop.
  */
 var linkedList = (function () {
   var linkedList = {},
