@@ -15,7 +15,7 @@ Building algorithms in Javascript as a learning exercise.
 - Linked-List
 - Doubly Linked-List
 - LRU Cache
-- Deffered
+- Deferred
 - Promises
 - Function.bind with Function.apply-like syntax
 
