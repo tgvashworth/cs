@@ -6,14 +6,13 @@ var assert = require('assert');
  * Supports push, pop, at, rm, last, first and length, plus traverse for logging.
  */
 var linkedList = (function () {
-  var linkedList = {},
-      node = {};
+  var linkedList = {};
 
   /**
    * Push a node to the front of the list
    */
   linkedList.push = function (val) {
-    var newNode = Object.create(node);
+    var newNode = {};
     newNode.value = val;
     if (this.tail) { this.tail.next = newNode; }
     if (!this.head) { this.head = newNode; }
@@ -111,42 +110,51 @@ var linkedList = (function () {
   return linkedList;
 }());
 
+module.exports = linkedList;
 
-var ll = Object.create(linkedList);
+if (require.main === module) {
 
-ll.push(1);
-ll.push(2);
-ll.push(3);
-ll.push(0);
-ll.push(5);
+  console.log('running tests...');
 
-assert.deepEqual(ll.at(0), 1);
-assert.deepEqual(ll.at(1), 2);
-assert.deepEqual(ll.at(2), 3);
-assert.deepEqual(ll.first(), 1);
-assert.deepEqual(ll.last(), 5);
-assert.deepEqual(ll.length(), 5);
+  var ll = Object.create(linkedList);
 
-ll.rm(0);
-assert.deepEqual(ll.at(0), 2);
-assert.deepEqual(ll.length(), 4);
+  ll.push(1);
+  ll.push(2);
+  ll.push(3);
+  ll.push(0);
+  ll.push(5);
 
-ll.rm(3);
-assert.deepEqual(ll.last(), 0);
-assert.deepEqual(ll.length(), 3);
+  assert.deepEqual(ll.at(0), 1);
+  assert.deepEqual(ll.at(1), 2);
+  assert.deepEqual(ll.at(2), 3);
+  assert.deepEqual(ll.first(), 1);
+  assert.deepEqual(ll.last(), 5);
+  assert.deepEqual(ll.length(), 5);
 
-ll.pop();
-assert.deepEqual(ll.last(), 3);
-assert.deepEqual(ll.length(), 2);
+  ll.rm(0);
+  assert.deepEqual(ll.at(0), 2);
+  assert.deepEqual(ll.length(), 4);
 
-ll.pop();
-assert.deepEqual(ll.last(), 2);
-assert.deepEqual(ll.length(), 1);
+  ll.rm(3);
+  assert.deepEqual(ll.last(), 0);
+  assert.deepEqual(ll.length(), 3);
 
-ll.pop();
-assert.deepEqual(ll.last(), null);
-assert.deepEqual(ll.length(), 0);
+  ll.pop();
+  assert.deepEqual(ll.last(), 3);
+  assert.deepEqual(ll.length(), 2);
 
-ll.push(1);
-assert.deepEqual(ll.last(), 1);
-assert.deepEqual(ll.length(), 1);
+  ll.pop();
+  assert.deepEqual(ll.last(), 2);
+  assert.deepEqual(ll.length(), 1);
+
+  ll.pop();
+  assert.deepEqual(ll.last(), null);
+  assert.deepEqual(ll.length(), 0);
+
+  ll.push(1);
+  assert.deepEqual(ll.last(), 1);
+  assert.deepEqual(ll.length(), 1);
+
+  console.log('done');
+
+}
