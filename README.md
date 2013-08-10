@@ -17,10 +17,15 @@ Building algorithms in Javascript as a learning exercise.
 ### Todo
 
 - Doubly Linked-List
+- B-Tree
+- Self-balancing binary search tree
 - LRU Cache
 - Deferred
 - Promises
 - Function.bind with Function.apply-like syntax
+- Quick sort
+- Quick3 sort
+- Radix sort
 
 ## License
 
