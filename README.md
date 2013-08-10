@@ -18,6 +18,7 @@ Building algorithms in Javascript as a learning exercise.
 
 - Doubly Linked-List
 - B-Tree
+- B+Tree
 - Self-balancing binary search tree
 - LRU Cache
 - Deferred
