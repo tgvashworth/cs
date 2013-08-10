@@ -5,7 +5,7 @@ var assert = require('assert');
  *
  * This uses a kind of 'shuffle' starting with two pointers at the beginning of
  * each array. They are both incremented when the values match, otherwise the
- * smaller is matched.
+ * pointer with the smaller value is incremented.
  *
  * Worst case: O(m + n) where m = len(a), n = len(b)
  */
