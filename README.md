@@ -17,7 +17,6 @@ Building algorithms in Javascript as a learning exercise.
 
 ### Todo
 
-- Doubly Linked-List
 - B-Tree
 - B+Tree
 - Self-balancing binary search tree
