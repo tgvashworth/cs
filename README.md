@@ -5,6 +5,7 @@ Building algorithms in Javascript as a learning exercise.
 ### Data Structures
 
 - [Linked List](/data-structures/linked-list.js)
+- [Doubly Linked List](/data-structures/doubly-linked-list.js)
 
 ### Search
 
